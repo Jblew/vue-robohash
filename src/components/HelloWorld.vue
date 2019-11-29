@@ -7,6 +7,7 @@
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
     <h3>Installed CLI Plugins</h3>
+    <robohash id="robohash" />
     <ul>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript" target="_blank" rel="noopener">typescript</a></li>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
@@ -32,8 +33,11 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import Robohash from './Robohash.vue'
 
-@Component
+@Component({ components: {
+  Robohash
+} })
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 }
@@ -41,6 +45,11 @@ export default class HelloWorld extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+#robohash {
+  width: 100px;
+  height: 100px;
+}
+
 h3 {
   margin: 40px 0 0;
 }
